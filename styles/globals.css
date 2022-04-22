@@ -14,3 +14,27 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+@font-face {
+  font-family: "iconfont"; /* Project id 1554468 */
+  src: url('../components/Icon/iconfont.woff2?t=1646352227368') format('woff2'),
+       url('../components/Icon/iconfont.woff?t=1646352227368') format('woff'),
+       url('../components/Icon/iconfont.ttf?t=1646352227368') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
