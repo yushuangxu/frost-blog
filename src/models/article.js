@@ -1,6 +1,6 @@
-import service from '../api/axios';
+import service from '../../api/axios';
 
-export const list = (data) => service({
+export const getList = (data) => service({
     url: '/article/list',
     method: 'get',
     data: data,

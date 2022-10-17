@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+// import styles from '../../../styles/Home.module.scss'
 import styles from '../styles/Home.module.scss'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import Link from 'next/link'
-import { list } from '../models/article'
+import { getList } from '@/models/article'
+import { fetchArticle, } from '@/store/feafures/article'
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState, AppDispatch } from '@/store'
 const Home: NextPage = () => {
 	const [IconList, setIconList] = useState([
 		{
@@ -26,23 +30,23 @@ const Home: NextPage = () => {
 	]);
 	const [data, setData] = useState<any>([])
 	const [loadd, setLoadd] = useState(true)
+	const { article /* , isLoading */ } = useSelector(
+		(state: RootState) => state.article,
+	);
+	const dispatch = useDispatch<AppDispatch>();
 	useEffect(() => {
-		getList()
+		getList1()
+
 	}, [])
-	const getList = () => {
-		list().then((res: any) => {
-			if (res.code === 200) {
-				setLoadd(false)
-				setData(res.data)
-			}
-		})
+	const getList1 = () => {
+		dispatch(fetchArticle({ page: 1, pageSize: 1 }))
 	}
 
 	const renderContent = () => {
 		return <div className={styles.landingpage}>
 			<section className={styles.outer}>
 				<article>
-					{data.map((item: any, index: number) => (
+					{article?.map((item: any, index: number) => (
 						<div className={styles.articleInner} key={index}>
 							<header className={styles.articleHeader}>
 								<h2>{item.title}</h2>
