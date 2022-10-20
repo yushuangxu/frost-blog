@@ -10,3 +10,8 @@ export const add = (data) => service({
     method: 'post',
     data: data
 });
+export const getInfo = (data) => service({
+    url: '/article/info',
+    method: 'post',
+    data: data
+});

@@ -1,0 +1,47 @@
+$text-color: #fff;
+
+.textCenter {
+    text-align: center;
+    color: $text-color;
+}
+
+.landingpage {
+    .outer {
+        padding-left: 0;
+        padding-right: 5%;
+        margin: auto;
+        width: 50%;
+        .articleInner {
+            display: flex;
+            .articleHeader {
+                .title {
+                    font-size: 20px;
+                }
+            }
+
+            .timeWrap {
+                display: flex;
+                align-items: center;
+
+                .time {
+                    width: 25px;
+                    height: 25px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+            .desc {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .look {
+                margin: 1.5rem 0;
+                font-size: 14px;
+                a {
+                    color: #127ea9;
+                }
+            }
+        }
+    }
+}

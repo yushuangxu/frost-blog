@@ -7,7 +7,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 
-import type { RestraintProps } from '../src/types/components';
+import type { RestraintProps } from '../types/components';
 
 import styles from './pc/restraint.module.scss';
 

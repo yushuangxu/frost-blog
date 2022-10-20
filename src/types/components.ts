@@ -131,78 +131,10 @@ export type FooterData = {
     label: string,
     data: FooterDataItem[]
 }
-
-/** Footer 子组件的props类型 */
-export type FooterChildrenProps = {
-    data: FooterData[]
+export type articleItemProps = {
+    data: (string | number | {
+        name: string,
+        desc: string,
+        id: number
+    })[];
 }
-
-export type UserFooterType = {
-    /**
-     * 类型
-     *
-     * 可选值：
-     * - login： 去登录
-     * - register： 去注册
-     * - backLogin： 返回登录
-     */
-    type: 'login' | 'register' | 'backLogin' | 'forget',
-}
-/** user 页脚组件 props类型 */
-export type UserFooterProps = {
-    /** 点击回调方法 */
-    onGo: (param: UserFooterType['type'], tabI?: 0 | 1) => void
-} & UserFooterType;
-
-/** UserLogin 页脚组件 props类型 */
-export type UserLoginProps = {
-    /** 点击回调方法 */
-    onGo: UserFooterProps['onGo'],
-    /** 登录成功回调方法 */
-    onOk: () => void,
-    /**
-     * login tabI
-     *
-     * 可选值:
-     * - 0: 账号密码登录
-     * - 1: 验证码登录
-     */
-    tabI?: 0 | 1,
-};
-
-/** UserRegisterForget 组件的props类型 */
-export type UserRFProps = {
-    /**
-     * 类型
-     *
-     * 可选值：
-     * - register: 注册
-     * - forget: 找回密码
-     */
-    type: 'register' | 'forget',
-    /** 点击回调方法 */
-    onGo: UserFooterProps['onGo']
-}
-
-/** Banner组件props */
-export type BannerProps = {
-    /** 图片资源数组 */
-    imgs: string[]
-}
-
-/** index Title 组件的props类型 */
-export type TitleProps = {
-    /** 标题 */
-    t: string,
-    /**
-     * 对齐方式
-     *
-     * 可选值：
-     * - left 左对齐
-     * - center 居中对齐
-     * - right 右对齐
-     */
-    align?: 'left' | 'center' | 'right',
-    /** 字体样式 */
-    tStyle?: object,
-} & Base.BaseType;

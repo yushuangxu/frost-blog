@@ -4,3 +4,6 @@ export type GetArticleListPayload = {
     pageSize: number,
 
 }
+export type GetArticleInfoPayload = {
+    id: any,
+}

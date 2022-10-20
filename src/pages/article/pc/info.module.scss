@@ -1,0 +1,22 @@
+.wrap {
+    padding-top: 50px;
+    .titleWrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .title {
+            // font-family: Gothic;
+            font-size: 24px;
+        }
+        .line {
+            background-color: #1a98ff;
+            width: 35px;
+            height: 1px;
+            margin-top: 20px;
+        }
+    }
+    .contentWrap {
+        padding-top: 30px;
+    }
+}

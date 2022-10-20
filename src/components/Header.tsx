@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import type { HeaderProps } from '../src/types/components';
+import type { HeaderProps } from '../types/components';
 import styles from './pc/head.module.scss';
 import Image from 'next/image'
 import Restraint from './Restraint';
@@ -24,12 +24,14 @@ const Header: React.FC<HeaderProps> = () => {
     return (
         <div className={styles.header_wrap}>
             <Restraint className={styles.wrap}>
-                <Image width={50} height={50} src='/bai.png' alt="" />
-
+                <Image width={50} height={50} src='/hei.png' alt="" />
                 <ul className={styles.head_list}>
                     {nav.map((item, index) => (
                         <li key={index} className={styles.head_item}>
-                            {item.name}
+                            <Link href={item.path}>
+                                <span className={styles.t}>{item.name}</span>
+                            </Link>
+
                         </li>
                     ))}
                 </ul>

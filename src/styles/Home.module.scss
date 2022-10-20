@@ -88,6 +88,10 @@ $text-color: #fff;
 .textCenter {
 	text-align: center;
 	color: $text-color;
+	font-size: 22px;
+	.name {
+		font-size: 22px;
+	}
 }
 
 .landingpage {

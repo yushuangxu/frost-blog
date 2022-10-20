@@ -12,10 +12,12 @@ export const trackLoadingState = (
     key: string,
 ) => {
     builder.addCase(asyncThunk.pending, (state: { isLoading: boolean }) => {
+
         state.isLoading = true;
     });
     builder.addCase(asyncThunk.fulfilled, (state: any, action: any) => {
         state.isLoading = false;
+
         if (state[key]) state[key] = action.payload;
     });
     builder.addCase(

@@ -4,12 +4,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 // import styles from '../../../styles/Home.module.scss'
 import styles from '../styles/Home.module.scss'
-import Header from '../../components/Header'
+// import Header from '../components/Header'
 import Link from 'next/link'
-import { getList } from '@/models/article'
+// import { getList } from '@/models/article'
 import { fetchArticle, } from '@/store/feafures/article'
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store'
+import Item from '@/components/ArticleItem'
 const Home: NextPage = () => {
 	const [IconList, setIconList] = useState([
 		{
@@ -28,11 +29,7 @@ const Home: NextPage = () => {
 			path: '/photo/index'
 		}
 	]);
-	const [data, setData] = useState<any>([])
-	const [loadd, setLoadd] = useState(true)
-	const { article /* , isLoading */ } = useSelector(
-		(state: RootState) => state.article,
-	);
+
 	const dispatch = useDispatch<AppDispatch>();
 	useEffect(() => {
 		getList1()
@@ -41,35 +38,13 @@ const Home: NextPage = () => {
 	const getList1 = () => {
 		dispatch(fetchArticle({ page: 1, pageSize: 1 }))
 	}
+	const { article, isLoading } = useSelector(
+		(state: RootState) => state.article,
+	);
 
-	const renderContent = () => {
-		return <div className={styles.landingpage}>
-			<section className={styles.outer}>
-				<article>
-					{article?.map((item: any, index: number) => (
-						<div className={styles.articleInner} key={index}>
-							<header className={styles.articleHeader}>
-								<h2>{item.title}</h2>
-								<div className={styles.timeWrap}>
-									<Image src="/time.png" width={25} height={25} alt="" />
-									<p>2022-03-04</p>
-								</div>
-								<p className={styles.desc}>{item.desc}</p>
-								<p className={styles.look}>
-									<Link href="/article/info">
-										<a>阅读全文...</a>
-									</Link>
-								</p>
-							</header>
-						</div>
-					))}
-				</article>
-			</section>
-		</div >
-	}
 	return (
 		<div>
-			<Header />
+			{/* <Header /> */}
 			<main className={styles.container}>
 				<section className={styles.videoWrap}>
 					<div className={styles.video}>
@@ -87,9 +62,7 @@ const Home: NextPage = () => {
 						<div className={styles.videoInner}>
 							<h1 className={styles.textCenter}>
 								<Link href='/'>
-									<a >
-										梧桐灯
-									</a>
+									<span className={styles.name}>梧桐灯</span>
 								</Link>
 							</h1>
 							<p className={styles.textCenter}>我不喜欢风,但我对这海没有意见</p>
@@ -100,7 +73,7 @@ const Home: NextPage = () => {
 
 					</div>
 				</section>
-				{renderContent()}
+				<Item data={article} />
 			</main>
 			{/* <aside className={styles.sidebar}>
 				<Image width={50} height={50} className={styles.img} src="/hei.png" alt="" />
