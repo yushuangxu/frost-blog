@@ -6,6 +6,7 @@ import type { RootState, AppDispatch } from '@/store'
 import Item from '@/components/ArticleItem'
 import Container from '@/components/Container'
 import styles from './pc/list.module.scss'
+import Restraint from '@/components/Restraint';
 import { Spin, } from 'antd';
 const List: NextPage = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -19,6 +20,9 @@ const List: NextPage = () => {
 
     return <Container className={styles.wrap}>
         <Spin spinning={!!isLoading}>
+            <Restraint>
+                <h1 className={styles.t}>文章列表</h1>
+            </Restraint>
             <Item data={article} />
         </Spin>
     </Container>

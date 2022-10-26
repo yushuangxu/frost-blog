@@ -7,12 +7,14 @@ const nextConfig = {
 };
 
 const path = require("path");
+const withImages = require('next-images');
 module.exports = {
 	webpack: (config, options) => {
 
 		config.resolve.alias["@"] = path.resolve(__dirname);
 		return config;
 	},
+
 	withCSS: ({
 		cssModules: true,
 		cssLoaderOptions: {
@@ -26,6 +28,7 @@ module.exports = {
 				},
 			})
 		),
-	})
+	}),
+
 };
 module.exports = nextConfig;

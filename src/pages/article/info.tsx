@@ -10,6 +10,7 @@ import { fetchInfo, } from '@/store/feafures/article'
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store'
 import { Spin, } from 'antd';
+import Container from '@/components/Container'
 const md = new MarkdownIt();
 const Info: NextPage = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -22,9 +23,9 @@ const Info: NextPage = () => {
         const { id } = router?.query;
         dispatch(fetchInfo({ id }))
 
-    }, [router?.query])
-
-    return <div className={styles.wrap}>
+    }, [router?.query.id])
+    console.log(router?.query.id)
+    return <Container className={styles.wrap}>
         <Spin spinning={!!isLoading}>
             <Restraint>
                 <div className={styles.titleWrap}>
@@ -38,6 +39,6 @@ const Info: NextPage = () => {
                 ></div>}
             </Restraint >
         </Spin>
-    </div >
+    </Container >
 }
 export default Info

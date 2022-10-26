@@ -56,7 +56,7 @@ const Home: NextPage = () => {
 								muted
 								loop={true}
 								autoPlay={true}
-								src="https://houlang.mylifed.cn/seal.mp4"></video>
+								src="https://source.zhwangart.com/hexo/themes/ocean/ocean.mp4"></video>
 							<div className={styles.videoOverlay}></div>
 						</div>
 						<div className={styles.videoInner}>
@@ -73,6 +73,7 @@ const Home: NextPage = () => {
 
 					</div>
 				</section>
+				<div style={{ height: 100 }} />
 				<Item data={article} />
 			</main>
 			{/* <aside className={styles.sidebar}>

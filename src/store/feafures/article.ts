@@ -16,6 +16,7 @@ export const fetchInfo = createAsyncThunk(
     'article/info',
     async (payload: GetArticleInfoPayload) => {
         const res = await getInfo(payload);
+
         return res;
     },
 );
