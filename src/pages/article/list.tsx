@@ -17,13 +17,13 @@ const List: NextPage = () => {
     const { article, isLoading } = useSelector(
         (state: RootState) => state.article,
     );
-
+    const { list } = article || {}
     return <Container className={styles.wrap}>
         <Spin spinning={!!isLoading}>
             <Restraint>
                 <h1 className={styles.t}>文章列表</h1>
             </Restraint>
-            <Item data={article} />
+            <Item data={list} />
         </Spin>
     </Container>
 }

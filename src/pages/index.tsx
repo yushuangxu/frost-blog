@@ -33,7 +33,6 @@ const Home: NextPage = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	useEffect(() => {
 		getList1()
-
 	}, [])
 	const getList1 = () => {
 		dispatch(fetchArticle({ page: 1, pageSize: 1 }))
@@ -41,7 +40,7 @@ const Home: NextPage = () => {
 	const { article, isLoading } = useSelector(
 		(state: RootState) => state.article,
 	);
-
+	const { list } = article || {}
 	return (
 		<div>
 			{/* <Header /> */}
@@ -74,7 +73,7 @@ const Home: NextPage = () => {
 					</div>
 				</section>
 				<div style={{ height: 100 }} />
-				<Item data={article} />
+				<Item data={list} />
 			</main>
 			{/* <aside className={styles.sidebar}>
 				<Image width={50} height={50} className={styles.img} src="/hei.png" alt="" />

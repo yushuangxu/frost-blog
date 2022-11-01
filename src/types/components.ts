@@ -136,5 +136,9 @@ export type articleItemProps = {
         name: string,
         desc: string,
         id: number
-    })[];
+    })[] | undefined;
+}
+export type paginationProps = {
+    page: number,
+    pageSize: number
 }

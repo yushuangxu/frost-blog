@@ -21,7 +21,7 @@ export const fetchInfo = createAsyncThunk(
     },
 );
 const initialState: StoreArticleInitstate = {
-    article: [],
+    article: undefined,
     info: {},
     isLoading: false,
 };
