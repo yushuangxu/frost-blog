@@ -37,9 +37,11 @@ const Home: NextPage = () => {
 	const getList1 = () => {
 		dispatch(fetchArticle({ page: 1, pageSize: 1 }))
 	}
+
 	const { article, isLoading } = useSelector(
 		(state: RootState) => state.article,
 	);
+	console.log(article)
 	const { list } = article || {}
 	return (
 		<div>

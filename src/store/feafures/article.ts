@@ -7,6 +7,7 @@ import { trackLoadingState } from '../utils';
 export const fetchArticle = createAsyncThunk(
     'article/fetchArticle',
     async (payload: GetArticleListPayload) => {
+
         const res = await getList(payload);
 
         return res;

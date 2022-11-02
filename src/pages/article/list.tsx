@@ -11,9 +11,11 @@ import { Spin, } from 'antd';
 const List: NextPage = () => {
     const dispatch = useDispatch<AppDispatch>();
     useEffect(() => {
-        dispatch(fetchArticle({ page: 1, pageSize: 1 }))
+        getList()
     }, [])
-
+    const getList = () => {
+        dispatch(fetchArticle({ page: 1, pageSize: 1 }))
+    }
     const { article, isLoading } = useSelector(
         (state: RootState) => state.article,
     );

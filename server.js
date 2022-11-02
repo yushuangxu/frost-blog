@@ -4,6 +4,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 // 配置运行端口
 const port = process.env.PORT || 3000;
+
 // 判断是否为开发环境
 const dev = process.env.NODE_ENV !== 'production';
 // 初始化 app

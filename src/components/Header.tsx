@@ -30,7 +30,9 @@ const Header: React.FC<HeaderProps> = () => {
             <ul className={styles.head_list}>
                 {nav.map((item, index) => (
                     <li key={index} className={styles.head_item}>
-                        <div className={styles.icon} style={{ backgroundImage: `${item.icon}` }} />
+                        <Link href={item.path}>
+                            <div className={styles.icon} style={{ backgroundImage: `${item.icon}` }} />
+                        </Link>
                         <Link href={item.path}>
                             <span className={styles.t}>{item.name}</span>
                         </Link>

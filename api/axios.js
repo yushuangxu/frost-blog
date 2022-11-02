@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { notification } from 'antd';
 import { addPendingRequest, removePendingRequest } from './cancelRepeatRquest';
+const baseURL = process.env.NODE_ENV === 'development' ? '/api' : 'http://viewer.frost.pub';
 const service = axios.create({
     // 联调
-    baseURL: '/api',
+
+    baseURL: baseURL,
     headers: {
         get: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -29,6 +31,13 @@ const responseHandle = {
         return response.data.data;
     },
     401: response => {
+
+        notification.error({
+            message: '错误',
+            description: response.data.msg,
+        });
+    },
+    404: response => {
 
         notification.error({
             message: '错误',
