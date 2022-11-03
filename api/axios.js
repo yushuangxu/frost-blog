@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { notification } from 'antd';
 import { addPendingRequest, removePendingRequest } from './cancelRepeatRquest';
-const baseURL = process.env.NODE_ENV === 'development' ? '/api' : 'http://viewer.frost.pub';
+
 const service = axios.create({
     // 联调
 
-    baseURL: baseURL,
+    baseURL: '/api',
     headers: {
         get: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'

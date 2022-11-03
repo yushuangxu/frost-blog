@@ -41,7 +41,7 @@ const Home: NextPage = () => {
 	const { article, isLoading } = useSelector(
 		(state: RootState) => state.article,
 	);
-	console.log(article)
+	
 	const { list } = article || {}
 	return (
 		<div>
