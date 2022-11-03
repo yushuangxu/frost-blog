@@ -10,11 +10,11 @@ const dev = process.env.NODE_ENV !== 'production';
 // 初始化 app
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const target = dev ? 'http://127.0.0.1:7001' : 'http://viewer.frost.pub';
+
 // 代理配置表，这里和一般的 webpack 配置是一样的。
 const proxyTable = {
     '/api': {
-        target,
+        target: 'http://127.0.0.1:7001',
         pathRewrite: {
             '/api': '',
         },
