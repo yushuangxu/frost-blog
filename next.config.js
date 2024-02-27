@@ -14,9 +14,9 @@ module.exports = {
 		config.resolve.alias["@"] = path.resolve(__dirname);
 		return config;
 	},
-
+	images: { domains: ['localhost'] },
 	withCSS: ({
-		cssModules: true,
+		cssModules: false,
 		cssLoaderOptions: {
 			importLoaders: 1,
 			localIdentName: "[local]___[hash:base64:5]",
@@ -25,6 +25,7 @@ module.exports = {
 			withSass({
 				lessLoaderOptions: {
 					javascriptEnabled: true,
+					localIdentName: "[local]___[hash:base64:5]",
 				},
 			})
 		),

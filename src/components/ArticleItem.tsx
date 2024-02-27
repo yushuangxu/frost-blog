@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Restraint from './Restraint'
 const ArticleItem = (props: articleItemProps) => {
+	console.log(props.data)
 	return <div className={styles.landingpage}>
 		<Restraint>
 			<section className={styles.outer}>
@@ -15,6 +16,12 @@ const ArticleItem = (props: articleItemProps) => {
 								<div className={styles.timeWrap}>
 									<Image src="/time.png" width={25} height={25} alt="" />
 									<div>2022-03-04</div>
+								</div>
+								<div>
+									<Image unoptimized src={item.image} 
+									width={700} 
+									height={'100%'}
+									alt="" />
 								</div>
 								<div className={styles.desc}>{item.desc}</div>
 								<p className={styles.look}>

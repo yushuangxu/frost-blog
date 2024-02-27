@@ -1,0 +1,12 @@
+.pageWrap {
+    display: flex;
+    div {
+        flex: 1;
+    }
+}
+.pager {
+    display: flex;
+    flex: 1;
+    :global {
+    }
+}

@@ -1,22 +1,13 @@
-.wrap {
-    .titleWrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        .title {
-            // font-family: Gothic;
-            font-size: 24px;
-        }
-        .line {
-            background-color: #1a98ff;
-            width: 35px;
-            height: 1px;
-            margin-top: 20px;
-        }
+.aboutWrap {
+    padding-top: 50px;
+
+    .title {
+        font-size: 30px;
     }
-    .contentWrap {
-        padding-top: 30px;
+
+    .desc1 {
+        font-size: 14px;
+        padding-top: 20px;
     }
 }
 

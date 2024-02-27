@@ -138,7 +138,15 @@ export type articleItemProps = {
         id: number
     })[] | undefined;
 }
+
+//paginationProps 类型
 export type paginationProps = {
-    page: number,
-    pageSize: number
+    current: number,
+    total: number,
+    pageSize: number,
+
+}
+// MarkdownProps类型
+export type MarkdownProps={
+    markdownContent:string,
 }

@@ -14,7 +14,7 @@ const List: NextPage = () => {
         getList()
     }, [])
     const getList = () => {
-        dispatch(fetchArticle({ page: 1, pageSize: 1 }))
+        dispatch(fetchArticle({ page: 1, pageSize: 10 }))
     }
     const { article, isLoading } = useSelector(
         (state: RootState) => state.article,

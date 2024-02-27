@@ -11,6 +11,8 @@ import { fetchArticle, } from '@/store/feafures/article'
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store'
 import Item from '@/components/ArticleItem'
+import Pagination from '@/components/Pagination'
+import * as util from '@/utils/util';
 const Home: NextPage = () => {
 	const [IconList, setIconList] = useState([
 		{
@@ -35,14 +37,19 @@ const Home: NextPage = () => {
 		getList1()
 	}, [])
 	const getList1 = () => {
-		dispatch(fetchArticle({ page: 1, pageSize: 1 }))
+		dispatch(fetchArticle({ page: 1, pageSize: 10 }))
 	}
 
 	const { article, isLoading } = useSelector(
 		(state: RootState) => state.article,
 	);
+
+	const { list,count } = article || {}
+	const goList = ()=>{
+		
+		util.scrollTo(500)
+	}
 	
-	const { list } = article || {}
 	return (
 		<div>
 			{/* <Header /> */}
@@ -71,11 +78,13 @@ const Home: NextPage = () => {
 								<Image width={50} height={50} src='/bai.png' alt="" />
 							</div>
 						</div>
-
+						<div onClick={goList} className={styles.mouse}></div>
 					</div>
 				</section>
+			
 				<div style={{ height: 100 }} />
 				<Item data={list} />
+				<Pagination pageSize={0} current={0}  total={count??0}/>
 			</main>
 			{/* <aside className={styles.sidebar}>
 				<Image width={50} height={50} className={styles.img} src="/hei.png" alt="" />
