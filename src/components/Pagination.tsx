@@ -31,7 +31,7 @@ const Pager: React.FC<paginationProps> = ({ current, pageSize, total }) => {
     const totalPage = total / pageSize || 1
     const centerPages = []
     let centerPage = current;
-
+    console.log(totalPage)
     if (current > totalPage - 3) {
         centerPage = totalPage - 3
     }
@@ -63,7 +63,7 @@ const Pager: React.FC<paginationProps> = ({ current, pageSize, total }) => {
             totalPage > centerSize + 2 && current <= totalPage - centerSize + 1 &&
             <li className="more right">•••</li>}
         {
-            totalPage !== 1 && <li className="number">{totalPage}</li>
+            totalPage > 1 && <li className="number">{totalPage}</li>
         }
     </ul>
 }

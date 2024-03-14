@@ -12,25 +12,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store'
 import Item from '@/components/ArticleItem'
 import Pagination from '@/components/Pagination'
+import Typewriter from '@/components/Typewriter'
 import * as util from '@/utils/util';
 const Home: NextPage = () => {
-	const [IconList, setIconList] = useState([
-		{
-			name: '首页',
-			icon: '&#xe612;',
-			path: '/'
-		},
-		{
-			name: '归档',
-			icon: '&#xe600;',
-			path: '/archives/index',
-		},
-		{
-			name: '相册',
-			icon: '&#x100bb;',
-			path: '/photo/index'
-		}
-	]);
+	
 
 	const dispatch = useDispatch<AppDispatch>();
 	useEffect(() => {
@@ -45,6 +30,7 @@ const Home: NextPage = () => {
 	);
 
 	const { list,count } = article || {}
+		
 	const goList = ()=>{
 		
 		util.scrollTo(500)
@@ -73,7 +59,9 @@ const Home: NextPage = () => {
 									<span className={styles.name}>梧桐灯</span>
 								</Link>
 							</h1>
-							<p className={styles.textCenter}>我不喜欢风,但我对这海没有意见</p>
+							<div className={styles.textCenter}>
+							<Typewriter text='我不喜欢风,但我对这海没有意见' />
+							</div>
 							<div className={styles.imgWrap}>
 								<Image width={50} height={50} src='/bai.png' alt="" />
 							</div>
@@ -84,7 +72,7 @@ const Home: NextPage = () => {
 			
 				<div style={{ height: 100 }} />
 				<Item data={list} />
-				<Pagination pageSize={0} current={0}  total={count??0}/>
+				<Pagination pageSize={10} current={1}  total={count??0}/>
 			</main>
 			{/* <aside className={styles.sidebar}>
 				<Image width={50} height={50} className={styles.img} src="/hei.png" alt="" />
