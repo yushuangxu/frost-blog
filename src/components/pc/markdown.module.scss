@@ -1,0 +1,84 @@
+.content {
+
+
+
+
+    pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    code {
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 14px;
+        white-space: pre-wrap;
+        /* 保持空白符，换行显示 */
+        word-wrap: break-word;
+        /* 长单词换行 */
+
+        tab-size: 4;
+        /* 设置 Tab 的宽度为 4 个空格字符 */
+        overflow-wrap: break-word;
+    }
+
+    /* 无序列表样式 */
+    ul {
+        list-style-type: disc;
+        /* 定义无序列表的标记类型 */
+        padding-left: 20px;
+        /* 增加左边距 */
+    }
+
+    /* 有序列表样式 */
+    ol {
+        list-style-type: decimal;
+        /* 定义有序列表的标记类型 */
+        padding-left: 20px;
+        /* 增加左边距 */
+    }
+
+    /* 列表项样式 */
+    ul li,
+    ol li {
+        margin-bottom: 10px;
+        /* 列表项之间的间隔 */
+        line-height: 1.5;
+        font-size: 14px;
+        /* 行高 */
+    }
+
+    /* 嵌套列表样式 */
+    ul ul,
+    ol ol,
+    ul ol,
+    ol ul {
+        margin-top: 10px;
+        /* 嵌套列表的上边距 */
+        padding-left: 15px;
+        /* 嵌套列表的左边距 */
+    }
+
+    /* 列表项的链接样式 */
+    ul li a,
+    ol li a {
+        text-decoration: none;
+        /* 链接无下划线 */
+        color: #333;
+        /* 链接颜色 */
+    }
+
+    ul li a:hover,
+    ol li a:hover {
+        text-decoration: underline;
+        /* 鼠标悬浮时添加下划线 */
+    }
+}

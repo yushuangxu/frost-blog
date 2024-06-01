@@ -8,6 +8,7 @@ import MarkdownIt from "markdown-it";
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store'
 import Container from '@/components/Container'
+import HeadBg from '@/components/HeadBg'
 import { Spin, } from 'antd';
 const Info: NextPage = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -23,9 +24,10 @@ const Info: NextPage = () => {
     const { list } = extract || {}
     console.log(list)
     return <Container className={styles.wrap}>
-        <div className={styles.bg}>
+        {/* <div className={styles.bg}>
             <div>1111</div>
-        </div>
+        </div> */}
+        <HeadBg title='书摘' url='https://pic2.zhimg.com/80/v2-7c496c95897fb15768593cc5170c8b1a_1440w.jpg?source=1940ef5c' />
         <Restraint className={styles.extractWrap}>
 
             <div className={styles.title}>
@@ -34,7 +36,7 @@ const Info: NextPage = () => {
             <Spin spinning={!!isLoading}>
                 <div className={styles.itemWrap}>
                     {list?.map((item, index) => {
-                       return <Item data={item} key={index} />
+                        return <Item data={item} key={index} />
                     })}
                 </div>
             </Spin>
@@ -42,7 +44,7 @@ const Info: NextPage = () => {
     </Container >
 }
 const Item = (data: any) => {
-    
+
     return <div className={styles.item}>
         <div className={styles.desc}>
             {data?.data?.desc}

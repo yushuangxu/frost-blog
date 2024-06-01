@@ -12,6 +12,7 @@ import type { RootState, AppDispatch } from '@/store'
 import { Spin, } from 'antd';
 import Container from '@/components/Container'
 import Markdown from '@/components/Markdown'
+import HeadBg from '@/components/HeadBg';
 const Info: NextPage = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { info, isLoading } = useSelector(
@@ -19,19 +20,16 @@ const Info: NextPage = () => {
     );
     const router = useRouter();
     useEffect(() => {
-
         const { id } = router?.query;
+        if (!id) {
+            return;
+        }
         dispatch(fetchInfo({ id }))
 
-    }, [router?.query.id])
-    console.log(router?.query.id)
+    }, [dispatch, router?.query])
+
     return <Container className={styles.wrap}>
-        <div className={styles.bg}>
-            <div className={styles.titleWrap}>
-                <div className={styles.title}>文章详情</div>
-                <div className={styles.line} />
-            </div>
-        </div>
+        <HeadBg title='文章详情' url='https://pic2.zhimg.com/80/v2-b561c5b432183290eff81f2035501e88_1440w.jpg' />
         <Spin spinning={!!isLoading}>
             <div style={{ height: 60 }} />
             <Restraint>

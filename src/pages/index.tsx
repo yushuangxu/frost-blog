@@ -15,7 +15,7 @@ import Pagination from '@/components/Pagination'
 import Typewriter from '@/components/Typewriter'
 import * as util from '@/utils/util';
 const Home: NextPage = () => {
-	
+
 
 	const dispatch = useDispatch<AppDispatch>();
 	useEffect(() => {
@@ -29,13 +29,13 @@ const Home: NextPage = () => {
 		(state: RootState) => state.article,
 	);
 
-	const { list,count } = article || {}
-		
-	const goList = ()=>{
-		
+	const { list, count } = article || {}
+
+	const goList = () => {
+
 		util.scrollTo(500)
 	}
-	
+
 	return (
 		<div>
 			{/* <Header /> */}
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
 								</Link>
 							</h1>
 							<div className={styles.textCenter}>
-							<Typewriter text='我不喜欢风,但我对这海没有意见' />
+								<Typewriter text='我不喜欢风,但我对这海没有意见' />
 							</div>
 							<div className={styles.imgWrap}>
 								<Image width={50} height={50} src='/bai.png' alt="" />
@@ -69,10 +69,10 @@ const Home: NextPage = () => {
 						<div onClick={goList} className={styles.mouse}></div>
 					</div>
 				</section>
-			
+
 				<div style={{ height: 100 }} />
 				<Item data={list} />
-				<Pagination pageSize={10} current={1}  total={count??0}/>
+				<Pagination pageSize={10} current={1} total={count ?? 0} />
 			</main>
 			{/* <aside className={styles.sidebar}>
 				<Image width={50} height={50} className={styles.img} src="/hei.png" alt="" />

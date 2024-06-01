@@ -18,10 +18,10 @@ const ArticleItem = (props: articleItemProps) => {
 									<div>2022-03-04</div>
 								</div>
 								<div>
-									<Image unoptimized src={item.image} 
-									width={700} 
-									height={'100%'}
-									alt="" />
+									<Image unoptimized src={item?.image || ''}
+										width={700}
+										height={200}
+										alt="" />
 								</div>
 								<div className={styles.desc}>{item.desc}</div>
 								<p className={styles.look}>
